@@ -1,7 +1,7 @@
 FROM brgtsisdt3ptf001/oracleinstantclient:18 as build
 
-ENV LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib \
-  PKG_CONFIG_PATH=/usr/lib/oracle/18.5/client64/lib \
+ENV LD_LIBRARY_PATH="/usr/lib/oracle/18.5/client64/lib" \
+  PKG_CONFIG_PATH="/usr/lib/oracle/18.5/client64/lib" \
   CGO_CFLAGS="-I/usr/include/oracle/18.5/client64" \
   CGO_LDFLAGS="-L/usr/lib/oracle/18.5/client64/lib/ -lstdc++ -lclntsh"
 
@@ -30,8 +30,8 @@ RUN yum -y install \
 
 FROM brgtsisdt3ptf001/oracleinstantclient:18
 
-ENV LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib \
-  PKG_CONFIG_PATH=/usr/lib/oracle/18.5/client64/lib \
+ENV LD_LIBRARY_PATH="/usr/lib/oracle/18.5/client64/lib" \
+  PKG_CONFIG_PATH="/usr/lib/oracle/18.5/client64/lib" \
   CGO_CFLAGS="-I/usr/include/oracle/18.5/client64" \
   CGO_LDFLAGS="-L/usr/lib/oracle/18.5/client64/lib/ -lstdc++ -lclntsh"
 
